@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTGET GAME JAME</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="CssDosyası/bootstrap.min.css">
+    <!-- Özel CSS -->
+    <link rel="stylesheet" href="CssDosyası/bootstrap.min.css">
+    <link rel="stylesheet" href="CssDosyası/sayfa.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="../logo.png" type="image/png">
+
+    <!-- Fontlar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Fontlar Kodu 2 -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<   link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+
+<style>
+/* Juri Container ve Card Stilleri */
+.juri-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+.juri-card {
+    background: rgba(0, 0, 0, 0.577);
+    padding: 15px;
+    border: 1px solid #c9d011;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    width: 100%;
+}
+
+.juri-logo {
+    width: 220px;
+    margin: 0 auto 15px;
+}
+
+.juri-logo img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+.juri-info {
+    text-align: center;
+}
+
+.juri-info h3 {
+    color: #c9d011;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+/* Sponsor Card Basit Stil */
+.sponsor-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(201, 208, 17, 0.3);
+    border-radius: 15px;
+}
+
+.sponsor-card:hover {
+    border-color: #c9d011;
+}
+
+.sponsor-card a:hover {
+    color: #ffff00;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+section {
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+}
+
+.row1 {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.parallax-section { /*Arka plan rengi Css dosyasında */
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    padding: 40px 0;
+}
+
+.container-fluid {
+    position: relative;
+    z-index: 1;
+}
+
+
+section {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1600px;
+    background: rgba(0, 0, 0, 0.045);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 0, 0.2);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav.navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.nav.navbar-nav a {
+    color: #c9d011;
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 5px 10px;
+}
+
+.nav.navbar-nav a:hover {
+    color: #ffff00;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+    .nav.navbar-nav a:not(.hoverable1)::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ffff00;
+        transition: width 0.3s ease;
+    }
+
+.nav.navbar-nav a:hover::after {
+    width: 100%;
+}
+
+.background-image {
+    background-image: url('Resim/rg6.png');
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.9;
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.banner-main {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    padding-top: 10px; /* Navbar yüksekliği + extra boşluk */
+}
+
+.banner-main .container {
+    padding: 0;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.a1 {
+    display: inline-block; /* Linki buton gibi göstermek için */
+    padding: 12px 30px; /* Buton boyutları */
+    background-color: #007bff; /* Buton rengi */
+    color: white; /* Buton yazı rengi */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    border-radius: 5px; /* Buton köşelerini yuvarlat */
+    font-size: 1.1rem; /* Buton yazı boyutu */
+}
+
+.a1:hover {
+    background-color: #0056b3; /* Hover durumunda buton rengi */
+    transition: background-color 0.3s ease; /* Buton renk geçişi */
+}
+
+.text-bg {
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 255, 0, 0.2);
+    border-radius: 9px 20px 20px 20px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    margin-top: -1px;
+    border-top: none;
+    min-width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.text-bg h1 {
+    font-family: "Press Start 2P", system-ui;
+    color: #c9d011;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    font-size: 2.2rem;
+    margin: 0;
+    padding: 10px 0;
+    letter-spacing: 3px;
+    animation: glow 2s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+
+.text-xz{
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 30px;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(255, 255, 0, 0.2);
+  border-radius: 20px 20px 0 0;
+  width: fit-content;
+  border-bottom: none;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.text-xz h1 {
+    font-family: "Press Start 2P", system-ui;
+    color: #ffff00;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 5px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 0, 0.9),
+                     0 0 30px rgba(255, 255, 0, 0.7);
+    }
+}
+
+
+
+.hoverable1 img {
+    transition: transform 1s ease;
+}
+
+.hoverable1:hover img {
+    transform: rotate(360deg);
+}
+
+/* Geri Sayım Stilleri */
+.countdown-container {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 120px;
+    border: 2px solid rgba(255, 255, 0, 0.3);
+}
+
+.countdown-box span {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 2rem;
+    color: #c9d011;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.countdown-label {
+    font-family: "Press Start 2P", system-ui;
+    color: #ffff00;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.kayit-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #c9d011;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 0, 0.3);
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.kayit-btn:hover {
+    background: rgba(201, 208, 17, 0.2);
+    color: #ffff00;
+    border-color: rgba(255, 255, 0, 0.6);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.sponsor-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-left: 500px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+.sponsor-card {
+    background: rgba(0, 0, 0, 0.577);
+    padding: 15px;
+    border: 1px solid #c9d011;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    width: 100%;
+}
+
+.sponsor-logo {
+    width: 220px;
+    margin: 0 auto 15px;
+}
+
+.sponsor-logo img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+.sponsor-info {
+    text-align: center;
+}
+
+.sponsor-info h3 {
+    color: #c9d011;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.social-links a {
+    color: #c9d011;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* Program Tablosu Stilleri */
+.program-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+.program-table th {
+    background: rgba(201, 208, 17, 0.9);
+    color: #000;
+    padding: 15px;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.program-table td {
+    background: rgba(0, 0, 0, 0.667);
+    color: #c9d011;
+    padding: 15px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.program-table tr:hover td {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateX(10px);
+    box-shadow: -5px 0 10px rgba(201, 208, 17, 0.3);
+}
+
+.program-section {
+    padding: 40px 20px;
+}
+
+.program-title {
+    text-align: center;
+    color: #c9d011;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(201, 208, 17, 0.7);
+}
+</style>
+</head>
+<body>
+    <div class="hero-section">
+        <!-- Background Image -->
+        <div class="background-image"></div>
+        
+        <!-- Header Bölümü -->
+        <header>
+                
+
+            <div class="container-fluid">
+                <nav class="navbar navbar-inverse fixed-top">
+                    <ul class="nav navbar-nav">
+                        <li><a id="len1" class="hoverable press-start-2p-regular" href="#paydas">Paydaş</a></li>
+                     &nbsp    <li><a id="len2" class="hoverable press-start-2p-regular" href="#takim">Takım</a></li>
+                     &nbsp &nbsp <li><a id="len3" class="hoverable1" href="https://otget.mcbu.edu.tr/"><img src="Resim/logo.png" alt="Logo" style="height: 90px; width: auto;"></a></li>
+                        <li><a id="len4" class="hoverable press-start-2p-regular" href="#sponsor">Sponsor</a></li>
+                        &nbsp  <li><a id="len5" class="hoverable press-start-2p-regular" href="https://docs.google.com/forms/d/e/1FAIpQLScpAtIh6JjujFlO30UqY1EUMQ1_wwd1Px6jLfkT_xCvZtZwkg/viewform">Kayıt Ol</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="banner" class="banner-main">
+            <div class="container">
+                <div class="row justify-content-center" style="margin-top: 100px;">
+                    <div class="col-md-8">
+                        <div style="position: relative;">
+                            <div class="text-xz">
+                                &nbsp &nbsp &nbsp &nbsp
+                                <h1>25-26-27 Nisan</h1>
+                            </div>
+                            <div class="text-bg">
+                                <h1>OTGET GAME JAM</h1>
+                            </div>
+                    </div>
+
+                    <div class="countdown-container">
+                        <div id="countdown">
+                            <div class="countdown-box">
+                                <span id="days">00</span>
+                                <div class="countdown-label">GÜN</div>
+                            </div>
+                            <div class="countdown-box">
+                                <span id="hours">00</span>
+                                <div class="countdown-label">SAAT</div>
+                            </div>
+                            <div class="countdown-box">
+                                <span id="minutes">00</span>
+                                <div class="countdown-label">DAKİKA</div>
+                            </div>
+                            <div class="countdown-box">
+                                <span id="seconds">00</span>
+                                <div class="countdown-label">SANİYE</div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScpAtIh6JjujFlO30UqY1EUMQ1_wwd1Px6jLfkT_xCvZtZwkg/viewform" class="kayit-btn press-start-2p-regular">KAYIT OL</a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+    <div id="paydas" class="row1"> <!-- Yeni bir satır başlatıyoruz -->
+        <div class="col-md-4">
+            <div class="box">
+                <div class="box_text">
+                    <figure>
+                        <img src="Resim/rg4.png" alt="Kutu 1 Resmi" onclick="changeBackground('Resim/rg4.png')" style="cursor: pointer;" />
+                    </figure>
+                </div>
+               
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="box_text">
+                    <figure>
+                        <img src="Resim/rg2.png" alt="Kutu 1 Resmi" onclick="changeBackground('Resim/rg2.png')" style="cursor: pointer;" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="box_text">
+                    <figure>
+                        <img src="Resim/rg3.png" alt="Kutu 1 Resmi" onclick="changeBackground('Resim/rg3.png')" style="cursor: pointer;" />
+                    </figure>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+ 
+    
+    <!-- Program İçeriği Bölümü -->
+ 
+    <!-- Parallax Bölümü -->
+
+    <main id="takim" class="container-fluid mt-5">
+        <div style="position: relative; margin-bottom: 30px;">
+            <div style="background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); padding: 20px 30px; border-radius: 10px; display: inline-block; margin-left: 20px;">
+                <h1 style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 2.5rem; text-shadow: 0 0 15px rgba(201, 208, 17, 0.7); margin: 0; position: relative; z-index: 2;">MCBÜ OTGET</h1>
+            </div>
+        </div>
+        <div class="section-container">
+            <div class="image-section" onclick="openImage(this)">
+                <img src="Resim/mario.jpg" alt="Doğa 1" class="section-img">
+                <h2 class="section-title">MARIO</h2>
+            </div>
+            <div class="image-section" onclick="openImage(this)">
+                <img src="Resim/game.png" alt="Doğa 2" class="section-img">
+                <h2 class="section-title">ARCADE </h2>
+            </div>
+            <div class="image-section" onclick="openImage(this)">
+                <img src="Resim/arcade.jpg" alt="Doğa 3" class="section-img">
+                <h2 class="section-title">SECTION 3</h2>
+            </div>
+            <div class="image-section" onclick="openImage(this)">
+                <img src="Resim/rg4.png" alt="Doğa 4" class="section-img">
+                <h2 class="section-title">SECTION 4</h2>
+            </div>
+            <div class="image-section" onclick="openImage(this)">
+                <img src="Resim/rg5.png" alt="Doğa 5" class="section-img">
+                <h2 class="section-title">SECTION 5</h2>
+            </div>
+        </div>
+    </main>
+       
+    <!-- Sponsors Section -->
+    
+
+
+
+    
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <img src="" id="modalImage" class="modal-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <section class="kardlar">
+        <div class="container">
+            <div class="d-flex flex-row justify-content-center gap-5">
+                <div style="flex: 1; border: 5px solid #c9d011; padding: 30px; border-radius: 15px; background: rgba(0, 0, 0, 0.8); margin: 0 20px;">
+                    <div class="text-center">
+                        <h2 style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 2rem; margin-bottom: 20px;">Etkinlik Detayları</h2>
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                            <img src="Resim/wp.png" alt="Game Jam" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 15px;">
+                            <div style="color: #c9d011; font-family: 'Montserrat', sans-serif; font-size: 18px;">
+                                <p><i class="fas fa-calendar-alt"></i> 25-26-27 Nisan 2025</p>
+                                <a href="https://maps.app.goo.gl/dN2DEejMPN1LN63u8" target="_blank" style="color: #c9d011; text-decoration: none;"><i class="fas fa-map-marker-alt"></i>Karşıyaka Kolektif Girişimcilik Merkezi</a>
+                                <a href="https://www.instagram.com/mcbuotget/" target="_blank" style="color: #c9d011; text-decoration: none;">
+                            <br>        <i class="fab fa-instagram" style="font-size: 24px;"></i>
+                                    <span style="margin-left: 5px;">mcbuotget</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1; border: 5px solid #c9d011; padding: 30px; border-radius: 15px; background: rgba(0, 0, 0, 0.8); margin: 0 20px;">
+                    <div class="text-center">
+                        <h2 style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 2rem; margin-bottom: 20px;">Genel Kurallar</h2>
+                        <div style="color: #c9d011; font-family: 'Montserrat', sans-serif; font-size: 18px; text-align: left;">
+                            <ul style="list-style: none; padding: 0;">
+                                <li><i class="fas fa-check"></i> Etkinliğe katılım ücretsizdir.</li>
+                                <li><i class="fas fa-check"></i> Minimum takım üye sayısı 2'dir.</li>
+                                <li><i class="fas fa-check"></i> Maximum takım üye sayısı 4'tür.</li>
+                                <li><i class="fas fa-check"></i> Etkinlik süresi 48 saattir.</li>
+                                <li><i class="fas fa-check"></i> Takım oluşturmadan da kayıt olabilirsiniz.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+
+    <section id="sponsor" class="parallax-section mt-5 mb-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div style="background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); padding: 20px 30px; border-radius: 10px; display: inline-block;">
+                    <h1 style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 2.5rem; text-shadow: 0 0 15px rgba(201, 208, 17, 0.7); margin: 0; position: relative; z-index: 2;">SPONSOR</h1>
+                </div>
+            </div>
+            <div class="sponsor-container">
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor/qt=q_95.webp" alt="Sponsor 1" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 1</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor1</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor1</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor2.png" alt="Sponsor 2" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 2</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor2</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor2</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor3.png" alt="Sponsor 3" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 3</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor3</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor3</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor4.png" alt="Sponsor 4" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 4</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor4</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                       
+    <section id="paydaş" class="parallax-section mt-5 mb-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div style="background: rgba(0, 0, 0, 0); backdrop-filter: blur(10px); padding: 20px 30px; border-radius: 10px; display: inline-block;">
+                    <h1 style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 2.5rem; text-shadow: 0 0 15px rgba(201, 208, 17, 0.7); margin: 0; position: relative; z-index: 2;">PAYDAŞLAR</h1>
+                </div>
+            </div>
+            <div class="sponsor-container">
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor/qt=q_95.webp" alt="Sponsor 1" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 1</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor1</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor2.png" alt="Sponsor 2" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 2</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor2</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor3.png" alt="Sponsor 3" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 3</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor3</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor4.png" alt="Sponsor 4" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 4</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor4</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="program-section">
+        <div class="container">
+            <h2 class="program-title">PROGRAM ICERIGI</h2>
+            <table class="program-table">
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Saat</th>
+                        <th>Etkinlik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>25 Nisan</td>
+                        <td>10:00</td>
+                        <td>Açılış ve Kayıt</td>
+                    </tr>
+                    <tr>
+                        <td>25 Nisan</td>
+                        <td>11:00</td>
+                        <td>Tema Açıklanması ve Game Jam Başlangıcı</td>
+                    </tr>
+                    <tr>
+                        <td>25 Nisan</td>
+                        <td>14:00</td>
+                        <td>Unity Workshop</td>
+                    </tr>
+                    <tr>
+                        <td>26 Nisan</td>
+                        <td>10:00</td>
+                        <td>Oyun Geliştirme Mentörlüğü</td>
+                    </tr>
+                    <tr>
+                        <td>26 Nisan</td>
+                        <td>15:00</td>
+                        <td>İlerleme Değerlendirmesi</td>
+                    </tr>
+                    <tr>
+                        <td>27 Nisan</td>
+                        <td>14:00</td>
+                        <td>Oyunların Teslimi</td>
+                    </tr>
+                    <tr>
+                        <td>27 Nisan</td>
+                        <td>16:00</td>
+                        <td>Sunum ve Değerlendirme</td>
+                    </tr>
+                    <tr>
+                        <td>27 Nisan</td>
+                        <td>18:00</td>
+                        <td>Ödül Töreni ve Kapanış</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="juri" class="parallax-section mt-5 mb-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div style="background: rgba(0, 0, 0, 0); backdrop-filter: blur(10px); padding: 20px 30px; border-radius: 10px; display: inline-block;">
+                    <h1 style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 2.5rem; text-shadow: 0 0 15px rgba(201, 208, 17, 0.7); margin: 0; position: relative; z-index: 2;">JÜRİ</h1>
+                </div>
+            </div>
+            <div class="juri-container">
+                <div class="juri-card">
+                    <div class="juri-logo">
+                        <img src="Resim/sponsor/qt=q_95.webp" alt="Jüri 1" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="juri-info">
+                        <h3>JÜRİ 1</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor1</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="juri-card">
+                    <div class="juri-logo">
+                        <img src="Resim/sponsor2.png" alt="Jüri 2" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="juri-info">
+                        <h3>JÜRİ 2</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @juri2</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Jüri2</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="juri-card">
+                    <div class="juri-logo">
+                        <img src="Resim/sponsor3.png" alt="Jüri 3" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="juri-info">
+                        <h3>JÜRİ 3</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @juri3</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Jüri3</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="juri-card">
+                    <div class="juri-logo">
+                        <img src="Resim/sponsor4.png" alt="Jüri 4" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="juri-info">
+                        <h3>JÜRİ 4</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @juri4</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Jüri4</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="juri-card">
+                    <div class="juri-logo">
+                        <img src="Resim/sponsor5.png" alt="Jüri 5" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="juri-info">
+                        <h3>JÜRİ 5</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @juri5</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Jüri5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="juri" class="parallax-section mt-5 mb-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div style="background: rgba(0, 0, 0, 0); backdrop-filter: blur(10px); padding: 20px 30px; border-radius: 10px; display: inline-block;">
+                    <h1 style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 2.5rem; text-shadow: 0 0 15px rgba(201, 208, 17, 0.7); margin: 0; position: relative; z-index: 2;">TAKIM</h1>
+                </div>
+            </div>
+            <div class="sponsor-container">
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor/qt=q_95.webp" alt="Sponsor 1" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 1</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor1</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor2.png" alt="Sponsor 2" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 2</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor2</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor3.png" alt="Sponsor 3" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 3</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor3</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor4.png" alt="Sponsor 4" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 4</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor4</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor4.png" alt="Sponsor 4" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 4</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor4</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor4.png" alt="Sponsor 4" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 4</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor4</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor4.png" alt="Sponsor 4" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 4</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor4</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="Resim/sponsor4.png" alt="Sponsor 4" loading="lazy" width="200" height="150">
+                    </div>
+                    <div class="sponsor-info">
+                        <h3>SPONSOR 4</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i> @sponsor4</a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i> Sponsor4</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS ve Bağımlılıkları -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="../Site Fikirleri/bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+    <script src="JsDosyası/java.js"></script>
+     <!-- JavaScript -->
+     <script src="jsDosyası/bootstrap.min.js"></script>
+     <script src="jsDosyası/java.js"></script>
+</body>
+</html>
