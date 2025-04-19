@@ -1,0 +1,254 @@
+/* Footer Stilleri */
+footer {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 0, 0.3);
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+.mario-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: linear-gradient(to bottom, #e52521 0%, #c41e3a 100%);
+    border: 2px solid #000;
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 12px;
+    text-decoration: none;
+    text-shadow: 2px 2px #000;
+    box-shadow:
+        inset -2px -2px 0 rgba(0,0,0,0.3),
+        inset 2px 2px 0 rgba(255,255,255,0.3),
+        0 3px 0 #000;
+    transform: translateY(0);
+    transition: all 0.1s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.mario-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        inset -2px -2px 0 rgba(0,0,0,0.3),
+        inset 2px 2px 0 rgba(255,255,255,0.3),
+        0 5px 0 #000;
+}
+
+.mario-btn:active {
+    transform: translateY(2px);
+    box-shadow:
+        inset -2px -2px 0 rgba(0,0,0,0.3),
+        inset 2px 2px 0 rgba(255,255,255,0.3),
+        0 1px 0 #000;
+}
+
+.mario-btn i {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.footer-left a {
+    transition: all 0.3s ease;
+}
+
+.footer-left a:hover {
+    transform: translateY(-2px);
+}
+
+.footer-left a:hover img {
+    filter: brightness(1.2);
+}
+
+.footer-left a:hover span {
+    color: #ffff00;
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+}
+
+.footer-left {
+    flex: 0 0 auto;
+}
+
+.footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #c9d011;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    width: auto;
+    white-space: nowrap;
+}
+
+.footer-right {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.footer-social {
+    order: 2;
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.credits {
+    order: 1;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    width: 50px;
+    height: auto;
+}
+
+.footer-info {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-social {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-social a {
+    color: #c9d011;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #ffff00;
+}
+
+.copyright {
+    color: #c9d011;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+.credits-btn {
+    color: #c9d011;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border: 1px solid #c9d011;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.credits-btn:hover {
+    color: #ffff00;
+    background: rgba(0, 0, 0, 0.7);
+    border-color: #ffff00;
+    transform: translateY(-2px);
+}
+
+.credits-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #c9d011;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 1000;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.credits-popup h3 {
+    color: #c9d011;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.credits-popup p {
+    color: #c9d011;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #c9d011;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+footer a {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: #ffff00 !important;
+    transform: translateY(-2px);
+}
+
+footer a:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+footer i {
+    transition: transform 0.2s ease;
+}
+
+footer img {
+    filter: brightness(0.9);
+    transition: filter 0.2s ease;
+}
+
+footer img:hover {
+    filter: brightness(1);
+}

@@ -1,0 +1,124 @@
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.banner-main {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    padding-top: 10px; /* Navbar yüksekliği + extra boşluk */
+}
+
+.banner-main .container {
+    padding: 0;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.a1 {
+    display: inline-block;
+    padding: 8px 20px; /* Daha küçük padding */
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px; /* Daha küçük border-radius */
+    font-size: 0.9rem; /* Daha küçük yazı boyutu */
+}
+
+.a1:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: translateY(-1px); /* Hafif yukarı kalkma efekti */
+    transition: all 0.2s ease; /* Tüm geçişler için */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Hafif gölge efekti */
+}
+
+.text-bg {
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 255, 0, 0.2);
+    border-radius: 9px 20px 20px 20px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    margin-top: -1px;
+    border-top: none;
+    min-width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.text-bg h1 {
+    font-family: "Press Start 2P", system-ui;
+    color: #c9d011;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    font-size: 2.2rem;
+    margin: 0;
+    padding: 10px 0;
+    letter-spacing: 3px;
+    animation: glow 2s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+
+.text-xz{
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 30px;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(255, 255, 0, 0.2);
+  border-radius: 20px 20px 0 0;
+  width: fit-content;
+  border-bottom: none;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.text-xz h1 {
+    font-family: "Press Start 2P", system-ui;
+    color: #ffff00;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 5px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 0, 0.9),
+                     0 0 30px rgba(255, 255, 0, 0.7);
+    }
+}
+
+
+
+.hoverable1 img {
+    transition: transform 1s ease;
+}
+
+.hoverable1:hover img {
+    transform: rotate(360deg);
+}
