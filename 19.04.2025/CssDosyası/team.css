@@ -1,0 +1,144 @@
+.team-section {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    justify-content: center;
+    width: 90%;
+    align-items: stretch;
+}
+
+.team-card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border: 2px solid #c9d011;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffff00;
+    box-shadow: 0 5px 15px rgba(201, 208, 17, 0.3);
+}
+
+.team-logo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    flex: 0 0 auto;
+}
+
+.team-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.team-card:hover .team-logo img {
+    transform: scale(1.05);
+}
+
+.team-info {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.team-info h3 {
+    color: #c9d011;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.team-info p {
+    color: #c9d011;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin: 5px 0 15px;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.team-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.team-social a {
+    color: #c9d011;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.team-social a:hover {
+    color: #ffff00;
+    transform: translateY(-3px);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1200px) {
+    .team-container {
+        grid-template-columns: repeat(3, 1fr);
+        width: 95%;
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        max-width: 600px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        grid-template-columns: 1fr;
+        width: 85%;
+        max-width: 300px;
+        gap: 15px;
+    }
+    
+    .team-card {
+        padding: 15px;
+    }
+    
+    .team-logo {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .team-info h3 {
+        font-size: 14px;
+    }
+}

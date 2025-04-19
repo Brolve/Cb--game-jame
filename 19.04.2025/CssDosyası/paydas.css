@@ -1,0 +1,92 @@
+.paydas-container {
+    display: grid;
+    grid-template-columns: repeat(5, 250px);
+    gap: 30px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 20px;
+}
+
+.paydas-card {
+    background: rgba(0, 0, 0, 0.577);
+    padding: 15px;
+    border: 1px solid #c9d011;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.paydas-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(201, 208, 17, 0.3);
+}
+
+.paydas-logo {
+    width: 220px;
+    height: 180px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paydas-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.paydas-card:hover .paydas-logo img {
+    transform: scale(1.05);
+}
+
+.paydas-info {
+    text-align: center;
+}
+
+.paydas-info h3 {
+    color: #c9d011;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.paydas-info p {
+    color: #ffffff;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 1400px) {
+    .paydas-container {
+        grid-template-columns: repeat(4, 250px);
+    }
+}
+
+@media (max-width: 1100px) {
+    .paydas-container {
+        grid-template-columns: repeat(3, 250px);
+    }
+}
+
+@media (max-width: 850px) {
+    .paydas-container {
+        grid-template-columns: repeat(2, 250px);
+    }
+}
+
+@media (max-width: 600px) {
+    .paydas-container {
+        grid-template-columns: repeat(1, 250px);
+    }
+}
