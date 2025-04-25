@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTGET GAME JAME</title>
+    <meta name="description" content="OTGET Game Jam 2025 - 25-26-27 Nisan tarihleri arasında düzenlenecek olan oyun geliştirme etkinliği">
+    <meta name="keywords" content="game jam, otget, oyun geliştirme, manisa, mcbü">
+    <title>OTGET GAME JAM 2025</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="CssDosyası/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <!-- Özel CSS -->
-    <link rel="stylesheet" href="CssDosyası/bootstrap.min.css">
-    <link rel="stylesheet" href="CssDosyası/sayfa.css">
-    <link rel="stylesheet" href="CssDosyası/team.css">
-    <link rel="stylesheet" href="CssDosyası/paydas.css">
-    <link rel="stylesheet" href="CssDosyası/footer.css">
-    <link rel="stylesheet" href="CssDosyası/count-tablo.css">
-    <link rel="stylesheet" href="CssDosyası/navbar.css">
+    <link rel="stylesheet" href="styles/sayfa.css">
+    <link rel="stylesheet" href="styles/team.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/count-tablo.css">
+    <link rel="stylesheet" href="styles/navbar.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Site logo -->
-    <link rel="icon" href="../WebSayfası/Resim/logo.png" type="image/png">
-    <link rel="shortcut icon" href="../WebSayfası/Resim/logo.png" type="image/png">
+    <link rel="icon" href="Resim/logo.png" type="image/png">
+    <link rel="shortcut icon" href="Resim/logo.png" type="image/png">
 
 
     <!-- Fontlar -->
@@ -64,12 +64,21 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 120px;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
 }
 
 body > footer {
@@ -115,25 +124,92 @@ section {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
-    max-width: 1600px;
+    width: 100vw;
+    max-width: 100vw;
     background: rgba(0, 0, 0, 0.045);
     backdrop-filter: blur(8px);
     z-index: 1000;
-    padding: 5px 0;
+    padding: 5px calc((100vw - 100%) / 2);
     border-bottom: 1px solid rgba(255, 255, 0, 0.2);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container-fluid {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    overflow-x: hidden;
+}
+
+.navbar-inverse {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
 }
 
 .nav.navbar-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav.navbar-nav li {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1200px) {
+    .nav.navbar-nav {
+        width: 95%;
+    }
+    .nav.navbar-nav a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav.navbar-nav {
+        width: 100%;
+        gap: 10px;
+        padding: 10px;
+    }
+    .nav.navbar-nav li {
+        flex: 0 0 auto;
+    }
+    .nav.navbar-nav a {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+    .hoverable1 img {
+        height: 70px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav.navbar-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .nav.navbar-nav a {
+        font-size: 0.65rem;
+    }
+    .hoverable1 img {
+        height: 60px !important;
+    }
 }
 
 .nav.navbar-nav a {
@@ -178,6 +254,12 @@ section {
     opacity: 0.9;
 }
 </style>
+
+    <!-- JavaScript Bağımlılıkları -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/java.js" defer></script>
 </head>
 <body>
     <div class="hero-section">
@@ -190,10 +272,10 @@ section {
                 <nav class="navbar navbar-inverse fixed-top">
                     <ul class="nav navbar-nav">
                         <li><a id="len1" class="hoverable press-start-2p-regular" href="#paydas">Paydaş</a></li>
-                     &nbsp    <li><a id="len2" class="hoverable press-start-2p-regular" href="#takim">EKIP</a></li>
-                     &nbsp &nbsp <li><a id="len3" class="hoverable1" href="https://otget.mcbu.edu.tr/"><img src="Resim/logo.png" alt="Logo" style="height: 90px; width: auto;"></a></li>
+                        <li><a id="len2" class="hoverable press-start-2p-regular" href="#takim">EKIP</a></li>
+                        <li><a id="len3" class="hoverable1" href="https://otget.mcbu.edu.tr/"><img src="resim/logo.png" alt="Logo" style="height: 90px; width: auto;"></a></li>
                         <li><a id="len4" class="hoverable press-start-2p-regular" href="#sponsor">Sponsor</a></li>
-                        &nbsp  <li><a id="len5" class="hoverable press-start-2p-regular" href="https://docs.google.com/forms/d/e/1FAIpQLScpAtIh6JjujFlO30UqY1EUMQ1_wwd1Px6jLfkT_xCvZtZwkg/viewform">Kayıt Ol</a></li>
+                        <li><a id="len5" class="hoverable press-start-2p-regular" href="https://docs.google.com/forms/d/e/1FAIpQLScpAtIh6JjujFlO30UqY1EUMQ1_wwd1Px6jLfkT_xCvZtZwkg/viewform">Kayıt Ol</a></li>
                     </ul>
                 </nav>
             </div>
@@ -211,6 +293,7 @@ section {
                             <div class="text-bg">
                                 <h1>OTGET GAME JAM</h1>
                             </div>
+                        </div>
                     </div>
 
                     <div class="countdown-container">
@@ -244,18 +327,58 @@ section {
   
 
     <!-- Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <img src="" id="modalImage" class="modal-img">
-                </div>
-            </div>
+    <div id="imageModal" class="custom-modal" role="dialog" aria-label="Resim Görüntüleyici">
+        <div class="custom-modal-content">
+            <button class="close" aria-label="Kapat">&times;</button>
+            <img src="" id="modalImage" class="modal-img" alt="Seçilen resim" tabindex="0">
         </div>
     </div>
+
+    <style>
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .custom-modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .modal-img {
+            max-width: 90%;
+            max-height: 80vh;
+            margin: auto;
+            display: block;
+        }
+
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #f1f1f1;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #c9d011;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 
     </div>
 
@@ -267,7 +390,7 @@ section {
                     <div class="text-center">
                         <h2 style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 2rem; margin-bottom: 20px;">Etkinlik Detayları</h2>
                         <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                            <img src="Resim/wp.jpg" alt="Game Jam" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 15px;">
+                            <img src="resim/wp.jpg" alt="Game Jam" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 15px;">
                             <div style="color: #c9d011; font-family: 'Montserrat', sans-serif; font-size: 18px;">
                                 <p><i class="fas fa-calendar-alt"></i> 25-26-27 Nisan 2025</p>
                                 <a href="https://maps.app.goo.gl/dN2DEejMPN1LN63u8" target="_blank" style="color: #c9d011; text-decoration: none;"><i class="fas fa-map-marker-alt"></i>Karşıyaka Kolektif Girişimcilik Merkezi</a>
@@ -307,23 +430,23 @@ section {
         </div>
         <div class="section-container">
             <div class="image-section" onclick="openImage(this)">
-                <img src="Resim/Etkinlik/Blender 101.jpeg" alt="Doğa 1" class="section-img">
+                <img src="resim/Program/rg1.jpeg" alt="Doğa 1" class="section-img">
                 <h2 class="section-title">BLENDER 101</h2>
             </div>
             <div class="image-section" onclick="openImage(this)">
-                <img src="Resim/Etkinlik/Unity 101.jpeg" alt="Doğa 2" class="section-img">
+                <img src="resim/Program/rg2.png" alt="Doğa 2" class="section-img">
                 <h2 class="section-title">UNITY 101 </h2>
             </div>
             <div class="image-section" onclick="openImage(this)">
-                <img src="Resim/Etkinlik/Unreal Eğitimi.png" alt="Doğa 3" class="section-img">
+                <img src="resim/Program/rg3.png" alt="Doğa 3" class="section-img">
                 <h2 class="section-title">TAKIPTE KALIN!! </h2>
             </div>
             <div class="image-section" onclick="openImage(this)">
-                <img src="Resim/Etkinlik/Unreal Engine 101.png" alt="Doğa 4" class="section-img">
+                <img src="resim/Program/rg4.png" alt="Doğa 4" class="section-img">
                 <h2 class="section-title">UNREAL ENGINE 101 </h2>
             </div>
             <div class="image-section" onclick="openImage(this)">
-                <img src="Resim/Etkinlik/Unity Eğitimi.png" alt="Doğa 5" class="section-img">
+                <img src="resim/Program/rg5.jpeg" alt="Doğa 5" class="section-img">
                 <h2 class="section-title">UNITY EGITIMI </h2>
             </div>
         </div>
@@ -340,7 +463,7 @@ section {
             <div class="team-container">
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/sponsor/DODO Pizza.png" alt="Takım Üyesi 1" loading="lazy" width="400" height="auto">
+                        <img src="resim/sponsor/rg1.png" alt="Takım Üyesi 1" loading="lazy" width="400" height="auto">
                     </div>
                     <div class="team-info"><br>
                         <h3>DODO  <br>PIZZA</h3>
@@ -351,7 +474,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim//sponsor/İzmir Büyükşehir Belediyesi.png" alt="Takım Üyesi 2" loading="lazy" width="200" height="150">
+                        <img src="resim/sponsor/rg2.png" alt="Takım Üyesi 2" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info"><br>
                         <h3>IZMIR BUYUKSEHIR BELEDIYESI</h3>
@@ -362,7 +485,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/sponsor/OG Games Entertainment.png" alt="Takım Üyesi 3" loading="lazy" width="200" height="150">
+                        <img src="resim/sponsor/rg3.png" alt="Takım Üyesi 3" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info"><br>
                         <h3>OG GAMES ENTERTAINMENT</h3>
@@ -373,7 +496,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/sponsor/Toptalent (Çekiliş Sponsoru).png" alt="Takım Üyesi 4" loading="lazy" width="200" height="150">
+                        <img src="resim/sponsor/rg4.png" alt="Takım Üyesi 4" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info"><br>
                         <h3>TOPTALENT</h3>
@@ -384,7 +507,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/sponsor/Yves Rocher Kampüs (Çekiliş Sponsoru).png" alt="Takım Üyesi 5" loading="lazy" width="200" height="150">
+                        <img src="resim/sponsor/rg1.png" alt="Takım Üyesi 5" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info"><br>
                         <h3>YVES ROCHER KAMPUS</h3>
@@ -409,7 +532,7 @@ section {
             <div class="team-container">
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Paydaş/Karşıyaka Belediyesi Kolektif Girişimcilik Merkezi.png" alt="Takım Üyesi 1" loading="lazy" width="400" height="auto">
+                        <img src="resim/paydas/rg1.png" alt="Takım Üyesi 1" loading="lazy" width="400" height="auto">
                     </div>
                     <div class="team-info"><br>
                         <h3>KARŞIYAKA  <br>BELEDIYESI</h3>
@@ -420,7 +543,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Paydaş/Karşıyaka Belediyesi.png" alt="Takım Üyesi 2" loading="lazy" width="200" height="150">
+                        <img src="resim/paydas/rg2.png" alt="Takım Üyesi 2" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info"><br>
                         <h3>KARSIYAKA BELEDIYESI</h3>
@@ -431,7 +554,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Paydaş/MCBU XRLab.png" alt="Takım Üyesi 3" loading="lazy" width="200" height="150">
+                        <img src="resim/paydas/rg3.png" alt="Takım Üyesi 3" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info"><br>
                         <h3>MCBU XRLAB</h3>
@@ -442,7 +565,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Paydaş/MCBÜ BAUM.png" alt="Takım Üyesi 4" loading="lazy" width="200" height="150">
+                        <img src="resim/paydas/rg4.png" alt="Takım Üyesi 4" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info"><br>
                         <h3>MCBU BAUM</h3>
@@ -453,11 +576,11 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Paydaş/MCBÜ MYO.png" alt="Takım Üyesi 5" loading="lazy" width="200" height="150">
+                        <img src="resim/paydas/rg5.png" alt="Takım Üyesi 5" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info"><br>
                         <h3>MCBU TEKNIK BILIMLER MYO</h3>
-                        <p>Manisa Teknik Bilimler MeslekYüksekOkulu</p>
+                        <p>Manisa Teknik Bilimler Meslek Yüksekokulu</p>
                         
                     </div>
                 </div>
@@ -476,7 +599,7 @@ section {
                     <tr>
                         <th>TARIH-GUN</th>
                         <th>Saat</th>
-                        <th>Etkınlık</th>
+                        <th>Etkinlik</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -496,7 +619,7 @@ section {
                         <td>Akşam Yemeği 🍽️</td>
                     </tr>
                     <tr>
-                        <td>26 Nisan-Cumartesı</td>
+                        <td>26 Nisan-Cumartesi</td>
                         <td>8:00</td>
                         <td>Kahvaltı 🍽️</td>
                     </tr>
@@ -517,22 +640,22 @@ section {
                         <td>Akşam Yemeği🍽️</td>
                     </tr>
                     <tr>
-                        <td>27 Nisan -Pazar </td>
+                        <td>27 Nisan-Pazar</td>
                         <td>08:00</td>
                         <td>Kahvaltı🍽️</td>
                     </tr>
                     <tr>
-                        <td>27 Nisan -Pazar</td>
+                        <td>27 Nisan-Pazar</td>
                         <td>12:00</td>
                         <td>Kahootlu Çekiliş </td>
                     </tr>
                     <tr>
-                        <td>27 Nisan -Pazar</td>
+                        <td>27 Nisan-Pazar</td>
                         <td>15:00</td>
                         <td>Oyunların son yükleme saati</td>
                     </tr>
                     <tr>
-                        <td>27 Nisan -Pazar</td>
+                        <td>27 Nisan-Pazar</td>
                         <td>16:30</td>
                         <td>Derecelerin Açıklanması</td>
                     </tr>
@@ -542,7 +665,7 @@ section {
     </section>
 
     <!--Jüri Bölümü -->
-    <section id="#" class="parallax-section mt-5 mb-4">
+    <section id="juri" class="parallax-section mt-5 mb-4">
         <div class="container">
             <div class="text-center mb-5">
                 <div style="background: rgba(0, 0, 0, 0); backdrop-filter: blur(10px); padding: 20px 30px; border-radius: 10px; display: inline-block;">
@@ -552,7 +675,7 @@ section {
             <div class="team-container">
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/JÜRİ/lucky.png" alt="Jüri Üyesi 1" loading="lazy">
+                        <img src="resim/hakemler/lucky.png" alt="Jüri Üyesi 1" loading="lazy">
                     </div>
                     <div class="team-info">
                         <h3>Yakında</h3>
@@ -563,7 +686,7 @@ section {
 
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/JÜRİ/image (1).png" alt="Jüri Üyesi 2" loading="lazy">
+                        <img src="resim/hakemler/rg.png" alt="Jüri Üyesi 2" loading="lazy">
                     </div>
                     <div class="team-info">
                         <h3>Zeren Tolga Kaçar</h3>
@@ -576,7 +699,7 @@ section {
 
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/JÜRİ/alİ.png" alt="Jüri Üyesi 3" loading="lazy">
+                        <img src="resim/hakemler/al.png" alt="Jüri Üyesi 3" loading="lazy">
                     </div>
                     <div class="team-info">
                         <h3>Ali Geriş</h3>
@@ -589,7 +712,7 @@ section {
 
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/JÜRİ/image.png" alt="Jüri Üyesi 4" loading="lazy">
+                        <img src="resim/hakemler/rg1.png" alt="Jüri Üyesi 4" loading="lazy">
                     </div>
                     <div class="team-info">
                         <h3>Ozan Gündüz</h3>
@@ -602,7 +725,7 @@ section {
 
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/JÜRİ/lucky.png" alt="Jüri Üyesi 5" loading="lazy">
+                        <img src="resim/hakemler/lucky.png" alt="Jüri Üyesi 5" loading="lazy">
                     </div>
                     <div class="team-info">
                         <h3>Yakında</h3>
@@ -625,7 +748,7 @@ section {
             <div class="team-container">
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Ekip/Eren Atasun (Topluluk Başkanı).jpg" alt="Takım Üyesi 1" loading="lazy" width="400" height="auto">
+                        <img src="resim/team/eren.jpg" alt="Takım Üyesi 1" loading="lazy" width="400" height="auto">
                     </div>
                     <div class="team-info">
                         <h3>Eren <br>Atasun</h3>
@@ -639,7 +762,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Ekip/Gonca Arabacı (Topluluk Başkan Yardımcısı).jpg" alt="Takım Üyesi 2" loading="lazy" width="200" height="150">
+                        <img src="resim/team/gonca.jpg" alt="Takım Üyesi 2" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info">
                         <h3>Gonca Arabacı</h3>
@@ -653,7 +776,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Ekip/Ertuğrul Taşkıran (Topluluk Başkan Yardımcısı).jpeg" alt="Takım Üyesi 3" loading="lazy" width="200" height="150">
+                        <img src="resim/team/erturul.jpeg" alt="Takım Üyesi 3" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info">
                         <h3>Ertuğrul Taşkıran</h3>
@@ -666,7 +789,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Ekip/Burçe Burakgazi (Topluluk Etkinlik Başkanı).jpeg" alt="Takım Üyesi 4" loading="lazy" width="200" height="150">
+                        <img src="resim/team/burce.jpeg" alt="Takım Üyesi 4" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info">
                         <h3>Burçe Burakgazi</h3>
@@ -679,7 +802,7 @@ section {
     
                 <div class="team-card">
                     <div class="team-logo">
-                        <img src="Resim/Ekip/Elara Karakış (Topluluk Sekreteri).jpeg" alt="Takım Üyesi 5" loading="lazy" width="200" height="150">
+                        <img src="resim/team/elara.jpeg" alt="Takım Üyesi 5" loading="lazy" width="200" height="150">
                     </div>
                     <div class="team-info">
                         <h3>Elara Karakış</h3>
@@ -698,7 +821,7 @@ section {
         <div class="footer-content">
             <div class="footer-left">
                 <a href="https://otget.mcbu.edu.tr/" style="display: flex; align-items: center; text-decoration: none; gap: 10px;">
-                    <img src="Resim/logo.png" alt="Logo" class="footer-logo" style="width: 50px; height: auto;">
+                    <img src="resim/logo.png" alt="Logo" class="footer-logo" style="width: 50px; height: auto;">
                     <span style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 14px;">MCBU OTGET</span>
                 </a>
             </div>
@@ -729,39 +852,26 @@ section {
         <span class="close-popup" onclick="hideCredits()" style="position: absolute; top: 10px; right: 15px;">&times;</span>
         <div style="display: flex; gap: 20px; height: 100%; padding: 20px;">
             <div style="flex: 0 0 300px;">
-                <img src="Resim/EmeğiGeçen/Mehmet.jpg" alt="Profil Fotoğrafı" style="width: 100%; height: 350px; border-radius: 10px; object-fit: cover;">
+                <img src="resim/emek/Mehmet.jpg" alt="Profil Fotoğrafı" style="width: 100%; height: 350px; border-radius: 10px; object-fit: cover;">
             </div>
             <div style="flex: 1; display: flex; gap: 20px;">
                 <div style="flex: 1;">
                     <h3 style="color: #c9d011; font-family: 'Press Start 2P', system-ui; font-size: 14px; margin-bottom: 15px;">Emeği Geçenler</h3>
                     <div style="display: grid; gap: 8px; font-size: 14px;">
                         <p><i class="fas fa-user"></i> Ad Soyad: Mehmet Kıvrak</p>
-                        <p><i class="fas fa-briefcase"></i> XRLAB Computer Programing Student</p>
+                        <p><i class="fas fa-briefcase"></i> XRLAB Computer Programming Student</p>
                         <p><i class="fas fa-phone"></i> Telefon: +90 506 051 9219</p>
-                        <p><i class="fas fa-envelope"></i> E-posta: mehmetkivrak6972@gmail.com </p>
+                        <p><i class="fas fa-envelope"></i> E-posta: mehmetkivrak6972@gmail.com</p>
                         <p><a href="https://www.instagram.com/mehmetkivr/" target="_blank" style="color: #c9d011; text-decoration: none;"><i class="fab fa-instagram"></i> @MehmetKıvrak</a></p>
                         <p><a href="https://www.linkedin.com/in/mehmet-k%C4%B1vrak-41b231228/" target="_blank" style="color: #c9d011; text-decoration: none;"><i class="fab fa-linkedin"></i> Mehmet Kıvrak</a></p>
                     </div>
                 </div>
-                
-        </div>
+            </div>
     </div>
-    <!-- Bootstrap ve JavaScript dosyaları -->
+    <!-- JavaScript -->
 
-<script>
-   
-</script>   
-   <!-- Bootstrap ve JavaScript dosyaları -->
-   <script src="jsDosyası/bootstrap.min.js"></script>
-   <script src="jsDosyası/java.js"></script>
-    <!-- Bootstrap JS ve Bağımlılıkları -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="../Site Fikirleri/bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
-    <script src="JsDosyası/java.js"></script>
-     <!-- JavaScript -->
-     <script src="jsDosyası/bootstrap.min.js"></script>
-     <script src="jsDosyası/java.js"></script>
+
+
      <script>
 // Smooth scroll için yardımcı fonksiyon
 document.addEventListener('DOMContentLoaded', function() {
@@ -780,19 +890,19 @@ document.addEventListener('DOMContentLoaded', function() {
    });
 });
 
-function showCredits() {
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('creditsPopup').style.display = 'block';
-}
+            function showCredits() {
+                document.getElementById('overlay').style.display = 'block';
+                document.getElementById('creditsPopup').style.display = 'block';
+            }
 
-function hideCredits() {
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('creditsPopup').style.display = 'none';
-}
+            function hideCredits() {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('creditsPopup').style.display = 'none';
+            }
 
-// Overlay tıklaması ile popup'ı kapatma
-document.getElementById('overlay').addEventListener('click', hideCredits);
-     </script>
+            // Overlay tıklaması ile popup'ı kapatma
+            document.getElementById('overlay').addEventListener('click', hideCredits);
+</script>
 
 
 </body>
