@@ -14,13 +14,15 @@
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/count-tablo.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/ana.css">
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Site logo -->
-    <link rel="icon" href="Resim/logo.png" type="image/png">
-    <link rel="shortcut icon" href="Resim/logo.png" type="image/png">
+    <link rel="icon" href="resim/logo.png" type="image/png">
+    <link rel="shortcut icon" href="resim/logo.png" type="image/png">
 
 
     <!-- Fontlar -->
@@ -44,205 +46,8 @@
      İyi çalışmalar dilerim.
      -->
 <style>
-
-
-/* Sponsor Card Stilleri */
-.sponsor-card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(201, 208, 17, 0.3);
-    border-radius: 15px;
-}
-
-.sponsor-card:hover {
-    border-color: #c9d011;
-}
-
-.sponsor-card a:hover {
-    color: #ffff00;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 120px;
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    position: relative;
-}
-
-body > footer {
-    margin-top: auto;
-    margin-bottom: 0;
-}
-
-section {
-    position: relative;
-    z-index: 1;
-    padding-top: 20px;
-}
-
-.row1 {
-    position: relative;
-    z-index: 1;
-    margin-top: 40px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.parallax-section { /*Arka plan rengi Css dosyasında */
-    position: relative;
-    z-index: 1;
-    margin-top: 40px;
-    padding: 40px 0;
-}
-
-.container-fluid {
-    position: relative;
-    z-index: 1;
-}
-
-
-section {
-    position: relative;
-    z-index: 1;
-    margin-top: 20px;
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    max-width: 100vw;
-    background: rgba(0, 0, 0, 0.045);
-    backdrop-filter: blur(8px);
-    z-index: 1000;
-    padding: 5px calc((100vw - 100%) / 2);
-    border-bottom: 1px solid rgba(255, 255, 0, 0.2);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-    margin: 0;
-}
-
-.container-fluid {
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    max-width: none;
-    overflow-x: hidden;
-}
-
-.navbar-inverse {
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    position: fixed;
-}
-
-.nav.navbar-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    flex-wrap: wrap;
-}
-
-.nav.navbar-nav li {
-    flex: 1;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-/* Responsive Tasarım */
-@media (max-width: 1200px) {
-    .nav.navbar-nav {
-        width: 95%;
-    }
-    .nav.navbar-nav a {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav.navbar-nav {
-        width: 100%;
-        gap: 10px;
-        padding: 10px;
-    }
-    .nav.navbar-nav li {
-        flex: 0 0 auto;
-    }
-    .nav.navbar-nav a {
-        font-size: 0.7rem;
-        padding: 3px 8px;
-    }
-    .hoverable1 img {
-        height: 70px !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .nav.navbar-nav {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .nav.navbar-nav a {
-        font-size: 0.65rem;
-    }
-    .hoverable1 img {
-        height: 60px !important;
-    }
-}
-
-.nav.navbar-nav a {
-    color: #c9d011;
-    text-decoration: none;
-    font-size: 0.9rem;
-    position: relative;
-    padding: 5px 10px;
-}
-
-.nav.navbar-nav a:hover {
-    color: #ffff00;
-    text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
-    transform: translateY(-2px);
-}
-
-    .nav.navbar-nav a:not(.hoverable1)::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #ffff00;
-        transition: width 0.3s ease;
-    }
-
-.nav.navbar-nav a:hover::after {
-    width: 100%;
-}
-
 .background-image {
-    background-image: url('Resim/rg6.png');
+    background-image: url('resim/rg6.png');
     position: fixed;
     top: 0;
     left: 0;
@@ -253,12 +58,14 @@ section {
     z-index: 0;
     opacity: 0.9;
 }
+
+
 </style>
 
     <!-- JavaScript Bağımlılıkları -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/bootstrap.min.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js';"></script>
     <script src="assets/java.js" defer></script>
 </head>
 <body>
