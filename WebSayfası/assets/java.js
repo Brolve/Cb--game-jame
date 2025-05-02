@@ -94,6 +94,130 @@ function openImage(element) {
 // Sayfa yüklendiğinde işlemleri başlat
 document.addEventListener('DOMContentLoaded', function() {
     try {
+        // Test için localStorage'ı temizle
+        localStorage.removeItem('eventEnded');
+        // 30 Mayıs 2025 tarihi için sayaç
+        const targetDate = new Date('2025-05-30T00:00:00').getTime();
+        
+        // Etkinlik bitti mi kontrolü
+        if (localStorage.getItem('eventEnded') === 'true') {
+            document.getElementById('countdown').innerHTML = `
+                <div class="event-started">
+                    <h2 class="blink">ETKİNLİK BAŞLADI!</h2>
+                    <div class="start-animation"></div>
+                </div>
+            `;
+            
+            // Stil ekle
+            const style = document.createElement('style');
+            style.textContent = `
+                .event-started {
+                    background: rgba(0, 0, 0, 0.8);
+                    padding: 20px;
+                    border-radius: 15px;
+                    border: 3px solid #c9d011;
+                    text-align: center;
+                }
+                .event-started h2 {
+                    color: #c9d011;
+                    font-family: 'Press Start 2P', system-ui;
+                    font-size: 2rem;
+                    margin: 0;
+                    text-shadow: 0 0 10px rgba(201, 208, 17, 0.7);
+                }
+                .blink {
+                    animation: blink-animation 1s steps(5, start) infinite;
+                }
+                @keyframes blink-animation {
+                    to {
+                        visibility: hidden;
+                    }
+                }
+                .start-animation {
+                    height: 3px;
+                    background: linear-gradient(to right, transparent, #c9d011, transparent);
+                    margin-top: 15px;
+                    animation: slide 2s ease-in-out infinite;
+                }
+                @keyframes slide {
+                    0% { transform: scaleX(0); }
+                    50% { transform: scaleX(1); }
+                    100% { transform: scaleX(0); }
+                }
+            `;
+            document.head.appendChild(style);
+            return;
+        }
+
+        // Her saniye sayacı güncelle
+        const countdownTimer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // Zaman hesaplamaları
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Sayaç elementlerini güncelle
+            document.getElementById('days').textContent = days < 10 ? '0' + days : days;
+            document.getElementById('hours').textContent = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+
+            // Süre dolduğunda
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                // Etkinliğin bittiğini kaydet
+                localStorage.setItem('eventEnded', 'true');
+                document.getElementById('countdown').innerHTML = `
+                    <div class="event-started">
+                        <h2 class="blink">ETKINLIK BAŞLADI!</h2>
+                        <div class="start-animation"></div>
+                    </div>
+                `;
+                
+                // Stil ekle
+                const style = document.createElement('style');
+                style.textContent = `
+                    .event-started {
+                        background: rgba(0, 0, 0, 0.8);
+                        padding: 20px;
+                        border-radius: 15px;
+                        border: 3px solid #c9d011;
+                        text-align: center;
+                    }
+                    .event-started h2 {
+                        color: #c9d011;
+                        font-family: 'Press Start 2P', system-ui;
+                        font-size: 2rem;
+                        margin: 0;
+                        text-shadow: 0 0 10px rgba(201, 208, 17, 0.7);
+                    }
+                    .blink {
+                        animation: blink-animation 1s steps(5, start) infinite;
+                    }
+                    @keyframes blink-animation {
+                        to {
+                            visibility: hidden;
+                        }
+                    }
+                    .start-animation {
+                        height: 3px;
+                        background: linear-gradient(to right, transparent, #c9d011, transparent);
+                        margin-top: 15px;
+                        animation: slide 2s ease-in-out infinite;
+                    }
+                    @keyframes slide {
+                        0% { transform: scaleX(0); }
+                        50% { transform: scaleX(1); }
+                        100% { transform: scaleX(0); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }, 1000);
 
         // Parallax efekti için
         $(window).scroll(function() {
